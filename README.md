@@ -19,3 +19,7 @@ Install Python requirements:
 
 ### NOTE:
 Ensure the ansible version you are running is similar to the one defined in requirements.txt
+
+### 3. Ansible
+To install Ansible roles, run the following command:  
+`ansible-galaxy install -r ansible-requirements.yml -p ./roles -f`
