@@ -5,6 +5,7 @@
 # configures the configuration version (we support older styles for
 # backwards compatibility). Please don't change it unless you know what
 # you're doing.
+
 Vagrant.configure("2") do |config|
   config.hostmanager.enabled = true
   config.hostmanager.manage_host = true
@@ -35,8 +36,6 @@ Vagrant.configure("2") do |config|
     
     kibana_node.vm.private_network "private_network", ip: "192.168.33.10"
     kibana_node.vm.network "forwarded_port", guest: 80, host: 8080
-
-    kibana_node.vm.provider :virtualbox do
   end
 
   config.vm.define "elastic_node" do |elastic_node|
