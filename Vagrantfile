@@ -28,7 +28,7 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.define "kibana_node" do |kibana_node|
-    kibana_node.vm.hostname = "kibana-node"
+    kibana_node.vm.hostname = "kibana_node"
     kibana_node.vm.box = "ubuntu/trusty64"
     kibana_node.vm.box_url = "ubuntu/trusty64"
     kibana_node.hostmanager.aliases = %w(kibana-node)
@@ -40,7 +40,7 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.define "elastic_node" do |elastic_node|
-    elastic_node.vm.hostname = "elastic-node"
+    elastic_node.vm.hostname = "elastic_node"
     elastic_node.vm.box = "ubuntu/trusty64"
     elastic_node.vm.box_url = "ubuntu/trusty64"
     elastic_node.hostmanager.aliases = "elastic-node"
@@ -49,7 +49,7 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.define "logstash_node" do |logstash_node|
-    logstash_node.vm.hostname = "logstash-node"
+    logstash_node.vm.hostname = "logstash_node"
     logstash_node.vm.box = "ubuntu/trusty64"
     logstash_node.vm.box_url = "ubuntu/trusty64"
     logstash_node.hostmanager.aliases = "logstash-node"
@@ -58,7 +58,7 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.define "web1_node" do |web1_node|
-    web1_node.vm.hostname = "web1-node"
+    web1_node.vm.hostname = "web1_node"
     web1_node.vm.box = "ubuntu/trusty64"
     web1_node.vm.box_url = "ubuntu/trusty64"
     web1_node.hostmanager.aliases = "web1-node"
@@ -67,7 +67,7 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.define "web2_node" do |web2_node|
-    web2_node.vm.hostname = "web2-node"
+    web2_node.vm.hostname = "web2_node"
     web2_node.vm.box = "ubuntu/trusty64"
     web2_node.vm.box_url = "ubuntu/trusty64"
     web2_node.hostmanager.aliases = "web2-node"
