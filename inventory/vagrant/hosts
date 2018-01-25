@@ -11,11 +11,6 @@ logstash_node
 web1_node
 web2_node
 
-[cluster:vars]
-ansible_user=vagrant ansible_ssh_private_key_file=~/.vagrant.d/insecure_private_key
-ansible_user=vagrant ansible_ssh_private_key_file=~/.vagrant.d/insecure_private_key
-
-
 [kibana]
 kibana_node
 
@@ -25,7 +20,7 @@ elastic_node
 [logstash]
 logstash_node
 
-[shippers]
+[shipper]
 web1_node
 web2_node
 
