@@ -18,12 +18,12 @@ Vagrant.configure("2") do |config|
     v.customize ["modifyvm", :id, "--ioapic", "on"]
   end
 
-  config.vm.define "kibana_node" do |kibana_node|
-    kibana_node.vm.hostname = "kibana_node"
-    kibana_node.hostmanager.aliases = %w(kibana_node)
-    kibana_node.vm.private_network "private_network", ip: "192.168.33.10"
+  config.vm.define "kibana" do |kibana|
+    kibana.vm.hostname = "kibana"
+    kibana.hostmanager.aliases = %w(kibana_node)
+    kibana.vm.private_network "private_network", ip: "192.168.33.10"
 
-    kibana_node.vm.provision :ansible do |ansible|
+    kibana.vm.provision :ansible do |ansible|
       ansible.inventory_path = "inventory/vagrant"
       ansible.playbook = "deploy.yml"
       ansible.sudo = true
@@ -31,12 +31,12 @@ Vagrant.configure("2") do |config|
     end
   end
 
-  config.vm.define "elastic_node" do |elastic_node|
-    elastic_node.vm.hostname = "elastic_node"
-    elastic_node.hostmanager.aliases = %w(elastic_node)
-    elastic_node.vm.private_network "private_network", ip: "192.168.33.11"
+  config.vm.define "elastic" do |elastic|
+    elastic.vm.hostname = "elastic"
+    elastic.hostmanager.aliases = %w(elastic)
+    elastic.vm.private_network "private_network", ip: "192.168.33.11"
     
-    elastic_node.vm.provision :ansible do |ansible|
+    elastic.vm.provision :ansible do |ansible|
       ansible.inventory_path = "inventory/vagrant"
       ansible.playbook = "deploy.yml"
       ansible.sudo = true
@@ -44,12 +44,12 @@ Vagrant.configure("2") do |config|
     end
   end
 
-  config.vm.define "logstash_node" do |logstash_node|
-    logstash_node.vm.hostname = "logstash_node"
-    logstash_node.hostmanager.aliases = %w(logstash_node)
-    logstash_node.vm.private_network "private_network", ip: "192.168.33.12"
+  config.vm.define "logstash" do |logstash|
+    logstash.vm.hostname = "logstash"
+    logstash.hostmanager.aliases = %w(logstash)
+    logstash.vm.private_network "private_network", ip: "192.168.33.12"
     
-    logstash_node.vm.provision :ansible do |ansible|
+    logstash.vm.provision :ansible do |ansible|
       ansible.inventory_path = "inventory/vagrant"
       ansible.playbook = "deploy.yml"
       ansible.sudo = true
@@ -57,12 +57,12 @@ Vagrant.configure("2") do |config|
     end
   end
 
-  config.vm.define "web1_node" do |web1_node|
-    web1_node.vm.hostname = "web1_node"
-    web1_node.hostmanager.aliases = %w(web1_node)
-    web1_node.vm.private_network "private_network", ip: "192.168.33.13"
+  config.vm.define "web1" do |web1|
+    web1.vm.hostname = "web1"
+    web1.hostmanager.aliases = %w(web1_node)
+    web1.vm.private_network "private_network", ip: "192.168.33.13"
     
-    web1_node.vm.provision :ansible do |ansible|
+    web1.vm.provision :ansible do |ansible|
       ansible.inventory_path = "inventory/vagrant"
       ansible.playbook = "deploy.yml"
       ansible.sudo = true
@@ -70,12 +70,12 @@ Vagrant.configure("2") do |config|
     end
   end
 
-  config.vm.define "web2_node" do |web2_node|
-    web2_node.vm.hostname = "web2_node"
-    web2_node.hostmanager.aliases = %w(web2_node)
-    web2_node.vm.private_network "private_network", ip: "192.168.33.14"
+  config.vm.define "web2" do |web2|
+    web2.vm.hostname = "web2"
+    web2.hostmanager.aliases = %w(web2_node)
+    web2.vm.private_network "private_network", ip: "192.168.33.14"
     
-    web2_node.vm.provision :ansible do |ansible|
+    web2.vm.provision :ansible do |ansible|
       ansible.inventory_path = "inventory/vagrant"
       ansible.playbook = "deploy.yml"
       ansible.sudo = true
