@@ -1,0 +1,39 @@
+---
+
+- hosts: shipper
+  become: yes
+  gather_facts: yes
+
+  pre_tasks:
+    - name: Update apt cache if needed
+      apt: update_cache=yes chache_valid_time=42200
+  
+  roles:
+    - ansible-role-nginx
+    - ansible-role-filebeat
+
+
+- hosts: logstash
+  become: yes
+  gather_facts: yes
+
+  roles:
+    - ansible-role-nginx
+    - geerlingguy.java
+    - ansible-role-logstash
+
+
+- hosts: kibana
+  become: yes
+  gather_facts: yes
+
+  roles:
+    - ansible-role-kibana
+
+- hosts: elasticsearch
+  gather_facts: yes
+
+  roles:
+    - geerlingguy.java
+    - ansible-role-nginx
+    - ansible-role-elasticsearch
