@@ -1,6 +1,6 @@
 ---
 
-- hosts: web1, web2
+- hosts: shippers
   become: yes
   gather_facts: yes
 
