@@ -12,7 +12,7 @@ filebeat_output_elasticsearch_hosts:
 
 filebeat_output_logstash_enabled: true
 filebeat_output_logstash_hosts:
-  - "192.168.33.12:5044"
+  - "192.168.50.12:5044"
 
 filebeat_enable_logging: false
 filebeat_log_level: warning

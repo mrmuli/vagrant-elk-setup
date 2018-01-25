@@ -1,5 +1,0 @@
----
-
-
-ansible_user: vagrant
-ansible_ssh_port: 22
