@@ -1,0 +1,34 @@
+---
+
+- hosts: shippers
+  become: yes
+  gather_facts: yes
+
+  roles:
+    - ansible-role-nginx
+    - ansible-role-filebeat
+
+- hosts: logstash
+  become: yes
+  gather_facts: yes
+
+  roles:
+    - ansible-role-nginx
+    - geerlingguy.java
+    - ansible-role-logstash
+
+- hosts: kibana
+  become: yes
+  gather_facts: yes
+
+  roles:
+    - ansible-role-kibana
+
+- hosts: elastic
+  become: yes
+  gather_facts: yes
+
+  roles:
+    - ansible-role-nginx
+    - geerlingguy.java
+    - ansible-role-elasticsearch
