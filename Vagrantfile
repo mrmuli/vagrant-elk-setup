@@ -18,7 +18,7 @@ Vagrant.configure("2") do |config|
     elastic.vm.network "forwarded_port", host: 9200, guest: 9200
     elastic.vm.provider :virtualbox do |v|
       v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
-      v.customize ["modifyvm", :id, "--memory", 512]
+      v.customize ["modifyvm", :id, "--memory", 768]
     end
   end
 
@@ -29,7 +29,7 @@ Vagrant.configure("2") do |config|
     logstash.vm.network "forwarded_port", host: 9300, guest: 9300
     logstash.vm.provider :virtualbox do |v|
       v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
-      v.customize ["modifyvm", :id, "--memory", 512]
+      v.customize ["modifyvm", :id, "--memory", 768]
     end
   end
 
@@ -38,7 +38,6 @@ Vagrant.configure("2") do |config|
     web1.vm.hostname = 'web1'
 
     web1.vm.network :private_network, ip: "192.168.50.13"
-
     web1.vm.provider :virtualbox do |v|
       v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
       v.customize ["modifyvm", :id, "--memory", 512]
