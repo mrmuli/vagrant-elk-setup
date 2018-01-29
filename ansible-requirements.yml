@@ -1,0 +1,21 @@
+---
+
+- src: git@github.com:geerlingguy/ansible-role-elasticsearch.git
+  version: 2.1.3
+  scm: git
+
+- src: git@github.com:geerlingguy/ansible-role-logstash.git
+  version: 3.0.0
+  scm: git
+
+- src: git@github.com:geerlingguy/ansible-role-kibana.git
+  version: 2.0.1
+  scm: git
+
+- src: git@github.com:geerlingguy/ansible-role-filebeat.git
+  version: 1.3.0
+  scm: git
+
+- src: git@github.com:geerlingguy/ansible-role-nginx.git
+  version: 2.5.0
+  scm: git
